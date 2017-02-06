@@ -1,26 +1,25 @@
-package services;
+package services.Retrofit;
 
 import java.util.concurrent.TimeUnit;
 
 import interfaces.RestService;
-import interfaces.RetrofitApiService;
 import models.Post;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Retrofit;
-import services.Callbacks.RequestCallback;
+import retrofit2.converter.gson.GsonConverterFactory;
+import services.ServiceConstants;
 
 /**
  * Created by receme on 2/6/17.
  */
 
-public class RetrofitManager implements RestService{
+public class RetrofitManager implements RestService {
 
     private final RetrofitApiService service;
 
-    public RetrofitManager(){
+    public RetrofitManager() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         OkHttpClient.Builder okHttp = new OkHttpClient.Builder();
         okHttp.connectTimeout(60, TimeUnit.SECONDS);
@@ -28,6 +27,7 @@ public class RetrofitManager implements RestService{
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ServiceConstants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttp.build())
                 .build();
 

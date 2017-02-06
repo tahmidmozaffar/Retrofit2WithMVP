@@ -16,22 +16,23 @@ import interfaces.MainView;
 import models.Post;
 import presenters.MainPresenter;
 import services.RestClientManager;
-import services.RetrofitManager;
+import services.Retrofit.RetrofitManager;
 
 public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener{
 
     @BindView(R.id.editText)
-    private EditText postNumberEdtxt;
+    EditText postNumberEdtxt;
     @BindView(R.id.button)
-    private Button getPostBtn;
+    Button getPostBtn;
     @BindView(R.id.textView1)
-    private TextView tv1;
+    TextView tv1;
     @BindView(R.id.textView2)
-    private TextView tv2;
+    TextView tv2;
     @BindView(R.id.textView3)
-    private TextView tv3;
+    TextView tv3;
     @BindView(R.id.textView4)
-    private TextView tv4;
+    TextView tv4;
+
     private MainPresenter presenter;
 
     @Override
@@ -43,11 +44,16 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         getPostBtn.setOnClickListener(this);
 
         presenter = new MainPresenter(this,new RestClientManager(new RetrofitManager()));
+        //you can use other restclient library here.
+        //to do that, replace RetrofitManager class with different implementation
     }
 
     @Override
     public void showPost(Post post) {
-
+        tv1.setText(post.getId());
+        tv2.setText(post.getUserid());
+        tv3.setText(post.getTitle());
+        tv4.setText(post.getBody());
     }
 
     @Override

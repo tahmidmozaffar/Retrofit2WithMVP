@@ -1,4 +1,4 @@
-package services.Callbacks;
+package services.Retrofit;
 
 import interfaces.RequestListener;
 import retrofit2.Call;

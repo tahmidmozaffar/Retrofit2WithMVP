@@ -2,11 +2,9 @@ package presenters;
 
 import interfaces.MainView;
 import interfaces.RequestListener;
-import interfaces.RestService;
 import models.Post;
 import interfaces.RestClient;
-import models.SSS;
-import services.Callbacks.RequestCallback;
+import services.Retrofit.RequestCallback;
 
 /**
  * Created by receme on 2/6/17.
@@ -32,12 +30,19 @@ public class MainPresenter implements RequestListener<Post> {
     }
 
     @Override
-    public void onResponseSuccess(Post response) {
-
+    public void onResponseSuccess(Post post) {
+        if(post!=null){
+            view.showPost(post);
+        }
+        else{
+            view.showAlert("Post cannot be loaded");
+        }
     }
 
     @Override
     public void onResponseFailure(Throwable t) {
-
+        if(t!=null){
+            view.showAlert(t.getMessage());
+        }
     }
 }

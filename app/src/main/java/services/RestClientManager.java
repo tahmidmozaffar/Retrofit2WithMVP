@@ -3,7 +3,7 @@ package services;
 import interfaces.RestClient;
 import interfaces.RestService;
 import models.Post;
-import services.Callbacks.RequestCallback;
+import services.Retrofit.RequestCallback;
 
 /**
  * Created by receme on 2/6/17.
