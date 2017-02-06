@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rcmapps.retrofit2withmvp.R;
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     @Override
     public void showPost(Post post) {
         tv1.setText(post.getId());
-        tv2.setText(post.getUserid());
+        tv2.setText(post.getUserId());
         tv3.setText(post.getTitle());
         tv4.setText(post.getBody());
     }

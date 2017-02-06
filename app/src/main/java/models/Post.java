@@ -6,24 +6,24 @@ package models;
 
 public class Post {
 
-    private String userid;
+    private String userId;
     private String id;
     private String title;
     private String body;
 
-    public Post(String userid, String id, String title, String body) {
-        this.userid = userid;
+    public Post(String userId, String id, String title, String body) {
+        this.userId = userId;
         this.id = id;
         this.title = title;
         this.body = body;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getId() {
