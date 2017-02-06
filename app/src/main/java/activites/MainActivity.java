@@ -17,6 +17,7 @@ import models.Post;
 import presenters.MainPresenter;
 import services.RestClientManager;
 import services.Retrofit.RetrofitManager;
+import utils.AppUtils;
 
 public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener{
 
@@ -58,7 +59,17 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
 
     @Override
     public void showAlert(String message) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+        AppUtils.showSimpleAlertWithMessage(this,"",message);
+    }
+
+    @Override
+    public void showProgressDialog(String message) {
+        AppUtils.showProgressDialog(this,message);
+    }
+
+    @Override
+    public void hideProgressDialog() {
+        AppUtils.hideProgressDialog(this);
     }
 
     @Override

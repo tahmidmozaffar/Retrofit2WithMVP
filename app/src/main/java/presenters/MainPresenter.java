@@ -26,11 +26,15 @@ public class MainPresenter implements RequestListener<Post> {
             return;
         }
 
+        view.showProgressDialog("Please wait...");
         service.getPostAsync(postId, new RequestCallback<>(this));
     }
 
     @Override
     public void onResponseSuccess(Post post) {
+
+        view.hideProgressDialog();
+
         if(post!=null){
             view.showPost(post);
         }
@@ -41,6 +45,9 @@ public class MainPresenter implements RequestListener<Post> {
 
     @Override
     public void onResponseFailure(Throwable t) {
+
+        view.hideProgressDialog();
+
         if(t!=null){
             view.showAlert(t.getMessage());
         }

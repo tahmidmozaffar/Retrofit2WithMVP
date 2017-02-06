@@ -11,41 +11,50 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
-        android:text="TextView"
+        android:hint="ID"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:id="@+id/textView1"
         android:layout_weight="1"/>
 
     <TextView
-        android:text="TextView"
+        android:hint="User ID"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:id="@+id/textView2"
         android:layout_weight="1"/>
 
     <TextView
-        android:text="TextView"
+        android:hint="Title"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:id="@+id/textView4"
         android:layout_weight="1"/>
 
     <TextView
-        android:text="TextView"
+        android:hint="Body"
+        android:layout_marginBottom="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:id="@+id/textView3"
         android:layout_weight="1"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_weight="1"
-        android:hint="post number"/>
+        android:hint="Enter post number"/>
 
     <Button
         android:text="Get post"
