@@ -1,7 +1,6 @@
 package interfaces;
 
 import models.Post;
-import services.Retrofit.RequestCallback;
 
 /**
  * Created by receme on 2/6/17.

@@ -2,9 +2,8 @@ package presenters;
 
 import interfaces.MainView;
 import interfaces.RequestListener;
-import models.Post;
 import interfaces.RestClient;
-import services.Retrofit.RequestCallback;
+import models.Post;
 
 /**
  * Created by receme on 2/6/17.

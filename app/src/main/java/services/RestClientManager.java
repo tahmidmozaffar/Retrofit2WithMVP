@@ -4,7 +4,6 @@ import interfaces.RequestListener;
 import interfaces.RestClient;
 import interfaces.RestService;
 import models.Post;
-import services.Retrofit.RequestCallback;
 
 /**
  * Created by receme on 2/6/17.
