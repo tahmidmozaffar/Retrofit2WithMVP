@@ -2,6 +2,7 @@ package services.Retrofit;
 
 import java.util.concurrent.TimeUnit;
 
+import interfaces.RequestListener;
 import interfaces.RestService;
 import models.Post;
 import okhttp3.OkHttpClient;
@@ -35,8 +36,8 @@ public class RetrofitManager implements RestService {
     }
 
     @Override
-    public void getPostAsync(String postId, RequestCallback<Post> postRequestCallback) {
+    public void getPostAsync(String postId, RequestListener<Post> listener) {
         Call<Post> call = service.getPost(postId);
-        call.enqueue(postRequestCallback);
+        call.enqueue(new RequestCallback<>(listener));
     }
 }

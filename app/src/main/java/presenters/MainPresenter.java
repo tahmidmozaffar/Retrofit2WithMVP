@@ -21,13 +21,13 @@ public class MainPresenter implements RequestListener<Post> {
     }
 
     public void getPost(String postId) {
-        if (postId == null) {
+        if (postId == null || postId.isEmpty()) {
             view.showAlert("Please enter a post id");
             return;
         }
 
         view.showProgressDialog("Please wait...");
-        service.getPostAsync(postId, new RequestCallback<>(this));
+        service.getPostAsync(postId, this);
     }
 
     @Override
