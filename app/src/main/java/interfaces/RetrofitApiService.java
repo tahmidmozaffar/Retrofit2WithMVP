@@ -2,6 +2,7 @@ package interfaces;
 
 import models.Post;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 

@@ -6,7 +6,6 @@ import services.Callbacks.RequestCallback;
 /**
  * Created by receme on 2/6/17.
  */
-
-public interface RestService {
+public interface RestClient {
     void getPostAsync(String postId, RequestCallback<Post> postRequestCallback);
 }
