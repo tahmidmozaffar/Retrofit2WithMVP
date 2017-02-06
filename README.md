@@ -12,7 +12,7 @@ Please see `RetrofitManager` class for reference.
 Also, add callback class and pass reference of `RequestListener` interface.
 Please see `RequestCallback` class for reference.
 
-_As you see,this implementation is only for async call.
+_As you see,this implementation is only for async call._
 
 
 **TO DO:**
