@@ -1,8 +1,11 @@
 package services;
 
+import java.util.List;
+
 import interfaces.RequestListener;
 import interfaces.RestClient;
 import interfaces.RestService;
+import models.Comment;
 import models.Post;
 
 /**
@@ -20,5 +23,10 @@ public class RestClientManager implements RestClient {
     @Override
     public void getPostAsync(String postId, RequestListener<Post> listener) {
         service.getPostAsync(postId,listener);
+    }
+
+    @Override
+    public void getCommentsAsync(String postId, RequestListener<List<Comment>> listener) {
+        service.getCommentsAsync(postId,listener);
     }
 }

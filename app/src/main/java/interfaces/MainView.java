@@ -8,6 +8,7 @@ import models.Post;
 
 public interface MainView {
     void showPost(Post post);
+    void showComments(String comments);
     void showAlert(String message);
     void showProgressDialog(String message);
     void hideProgressDialog();

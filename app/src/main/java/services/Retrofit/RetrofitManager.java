@@ -1,9 +1,11 @@
 package services.Retrofit;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import interfaces.RequestListener;
 import interfaces.RestService;
+import models.Comment;
 import models.Post;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -38,6 +40,12 @@ public class RetrofitManager implements RestService {
     @Override
     public void getPostAsync(String postId, RequestListener<Post> listener) {
         Call<Post> call = service.getPost(postId);
+        call.enqueue(new RequestCallback<>(listener));
+    }
+
+    @Override
+    public void getCommentsAsync(String postId, RequestListener<List<Comment>> listener) {
+        Call<List<Comment>> call = service.getComment(postId);
         call.enqueue(new RequestCallback<>(listener));
     }
 }

@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     TextView tv3;
     @BindView(R.id.textView4)
     TextView tv4;
+    @BindView(R.id.commentBox)
+    EditText commentBox;
+    @BindView(R.id.getCommentBtn)
+    Button getCommentBtn;
 
     private MainPresenter presenter;
 
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         ButterKnife.bind(this);
 
         getPostBtn.setOnClickListener(this);
+        getCommentBtn.setOnClickListener(this);
 
         presenter = new MainPresenter(this,new RestClientManager(new RetrofitManager()));
         //you can use other restclient library here.
@@ -54,6 +59,11 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         tv2.setText(post.getUserId());
         tv3.setText(post.getTitle());
         tv4.setText(post.getBody());
+    }
+
+    @Override
+    public void showComments(String comments) {
+        commentBox.setText(comments);
     }
 
     @Override
@@ -75,6 +85,9 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     public void onClick(View view) {
         if(view.equals(getPostBtn)){
             presenter.getPost(postNumberEdtxt.getText().toString());
+        }
+        else if(view.equals(getCommentBtn)){
+            presenter.getCommment(postNumberEdtxt.getText().toString());
         }
     }
 }
